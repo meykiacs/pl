@@ -89,6 +89,17 @@ Control.Print.printLength := 20;
 
 (**** PUT PROBLEMS 1-8 HERE ****)
 
+fun make_silly_json i =
+  let
+    fun helper i =
+      if i=0
+      then
+        []
+      else
+       (Object [ ("n", Num (int_to_real i)), ("b", True)])::helper(i-1)
+  in
+    Array (helper i)
+  end
 (* histogram and historgram_for_field are provided, but they use your 
    count_occurrences and string_values_for_field, so uncomment them 
    after doing earlier problems *)
@@ -112,8 +123,8 @@ fun histogram (xs : string list) : (string * int) list =
   end
 
 fun histogram_for_field (f,js) =
-  histogram (string_values_for_field (f, js)) 
-*)
+  histogram (string_values_for_field (f, js))  *)
+
 
 
 (**** PUT PROBLEMS 9-11 HERE ****)
