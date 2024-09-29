@@ -1,5 +1,19 @@
 (* CSE 341, HW2 Provided Code *)
 
+(* the only files you shouldd edit are hw2.sml, hw2tests.sml, and (optionally) hw2challenge.sml. *)
+
+(* Your solutions must use pattern-matching. You may not use the functions null, hd, tl, isSome, or valOf, nor may you use anything containing a # character or features not used in class (such as mutation). *)
+
+(* The crime-data files are needed only for problems 10–15 *)
+
+(* it consists of a JSON array of event records, each of which has several fields, such as the kind of event (e.g., shoplifting or noise complaint) and the location (e.g., 4500 block of 15th avenue NE). *)
+
+(* all records in the dataset can be found in JSON format in the file complete_police.json. *)
+
+(* that file contains over 10000 records, we have also included small, medium, and large subsets of the data, containing 10, 100, and 1000 records, respectively, available in the files small police.json, medium police.json, and large police.json. *)
+
+(* we have included the pre-parsed data files parsed small police.sml, parsed medium police.sml, and parsed large police.sml, each of which is a valid SML file that binds a single variable name to a value of type json. *)
+
 (* main datatype definition we will use throughout the assignment *)
 datatype json =
          Num of real (* real is what SML calls floating point numbers *)
@@ -81,8 +95,8 @@ Control.Print.printLength := 20;
 
 (* histogram_for_field takes a field name f and a list of objects js and 
    returns counts for how often a string is the contents of f in js. *)
-(*
-exception SortIsBroken
+
+(* exception SortIsBroken
 
 fun histogram (xs : string list) : (string * int) list =
   let
@@ -98,8 +112,9 @@ fun histogram (xs : string list) : (string * int) list =
   end
 
 fun histogram_for_field (f,js) =
-  histogram (string_values_for_field (f, js))
+  histogram (string_values_for_field (f, js)) 
 *)
+
 
 (**** PUT PROBLEMS 9-11 HERE ****)
 
