@@ -100,6 +100,12 @@ fun make_silly_json i =
   in
     Array (helper i)
   end
+
+fun assoc (k,xs) =
+  case xs of
+    [] => NONE |
+    (k1,v1)::xs' => if k1=k then SOME  v1 else assoc (k, xs')
+
 (* histogram and historgram_for_field are provided, but they use your 
    count_occurrences and string_values_for_field, so uncomment them 
    after doing earlier problems *)
