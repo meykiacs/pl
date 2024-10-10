@@ -110,7 +110,19 @@ fun dot (j, f) =
   case j of
     Object l => assoc (f, l) |
      _ => NONE
-     
+
+fun one_fields j =
+  let
+    fun helper (xs, acc) =
+      case xs of
+        [] => acc |
+        (f,v)::rest => helper (rest, f::acc)
+  in
+    case j of
+      Object l => helper(l, []) |
+      _ => []
+  end
+
 (* histogram and historgram_for_field are provided, but they use your 
    count_occurrences and string_values_for_field, so uncomment them 
    after doing earlier problems *)
