@@ -123,6 +123,8 @@ fun one_fields j =
       _ => []
   end
 
+fun no_repeats sl =
+  length (dedup sl) = length sl
 (* histogram and historgram_for_field are provided, but they use your 
    count_occurrences and string_values_for_field, so uncomment them 
    after doing earlier problems *)
