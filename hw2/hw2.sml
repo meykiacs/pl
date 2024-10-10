@@ -106,6 +106,11 @@ fun assoc (k,xs) =
     [] => NONE |
     (k1,v1)::xs' => if k1=k then SOME  v1 else assoc (k, xs')
 
+fun dot (j, f) =
+  case j of
+    Object l => assoc (f, l) |
+     _ => NONE
+     
 (* histogram and historgram_for_field are provided, but they use your 
    count_occurrences and string_values_for_field, so uncomment them 
    after doing earlier problems *)
